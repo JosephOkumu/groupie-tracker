@@ -1,0 +1,19 @@
+{{define "location"}}
+<body>
+    <header>
+        <h1>{{.Details.Name}}</h1>
+    </header>
+    <main class="centered-content">
+        <section class="concert-info">
+            <img src="{{ .Details.Image }}" alt="{{ .Details.Name }}">
+            <h2>Concert Locations</h2>
+            <ul class="no-bullets">
+                {{range .Loc.Locations}}
+                <li>{{.}}</li>
+                {{end}}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
+{{end}}

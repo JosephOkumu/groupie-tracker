@@ -1,0 +1,35 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.}}</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/logofavi.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="/static/scripts.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="/" class="navbar-logo">
+                <img src="/static/images/logofavi.ico" alt="Groupie Trackers Logo" class="navbar-logo-image"> 
+                Groupie Tracker
+            </a>
+            <ul class="navbar-menu">
+                <li><a href="/" class="navbar-item">Home</a></li>
+                <li>
+                    <form action="/search" method="GET" style="display: flex; align-items: center;" class="navbar-search">
+                        <input type="text" name="query" placeholder="Search..." style="padding-right: 30px;">
+                        <button type="submit" style="background: none; border: none; position: relative; right: 30px; padding: 0;">
+                            <i class="fas fa-search" style="color: #fff;"></i>
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
+{{end}}

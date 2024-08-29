@@ -1,0 +1,17 @@
+{{template "header" .Title}}
+{{ if eq "home" .Title}}
+{{ template "home" .Data }}
+{{ else if eq "Artist" .Title}}
+{{ template "Artist" .Data }}
+{{ else if eq "error" .Title}}
+{{ template "error" .Data }}
+{{ else if eq "location" .Title}}
+{{ template "location" .Data}}
+{{ else if eq "dates" .Title}}
+{{ template "dates" .Data}}
+{{else if eq "relations" .Title}}
+{{ template "relations" .Data}}
+{{else if eq "search" .Title}}
+{{template "search" .Data}}
+{{end}}
+{{ template "footer"}}

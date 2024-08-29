@@ -1,0 +1,542 @@
+/* General body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(#fdbb2d, #b21f1f);
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo and Groupie Tracker aligned to the left */
+.navbar-logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-right: auto; /* Pushes the logo to the far left */
+}
+
+.navbar-logo:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white background */
+    color: #ff0000; /* Change to golden yellow on hover */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Subtle glow effect */
+    transform: translateY(-2px); /* Slight upward movement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.navbar-logo img {
+    height: 40px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/* Navbar menu styling - aligned to the right */
+.navbar-menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: auto; /* Pushes the menu to the far right */
+}
+
+.navbar-item {
+    margin-left: 1rem; /* Adjusts spacing between menu items */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slight white background */
+    color: #ff0000; /* Change to golden yellow on hover */
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Subtle glow effect */
+    transform: translateY(-2px); /* Slight upward movement */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Search bar styling - inline with menu */
+.navbar-search {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem; /* Same margin as navbar-item */
+}
+
+.navbar-search input[type="text"] {
+    padding: 4px;  /* Reduced padding */
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;  /* Reduced font size */
+    width: 150px; /* Set a fixed width for a more compact look */
+}
+
+.navbar-search button {
+    padding: 4px 8px;  /* Reduced padding */
+    background-color: #555;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-left: 4px; /* Reduced margin */
+    border-radius: 4px;
+    font-size: 12px;  /* Reduced font size */
+}
+
+.navbar-search button:hover {
+    background-color: #777;
+}
+
+/* Clear floats after navbar links */
+.navbar::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Header styling */
+header {
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    background-color: rgba(51, 51, 51, 0.8);
+}
+
+/* Main content padding */
+main {
+    padding: 2em;   
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 2em;
+    padding-bottom: 100px; /* Adjust this value based on your footer height */
+}
+
+/* Centered section styling */
+.artist-info {
+    display: inline-block;
+    text-align: center;
+}
+
+/* Styling for lists within artist-info */
+.artist-info ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.artist-info li {
+    text-align: center;
+}
+
+/* Styling for images */
+.artist-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* Styling for details sections */
+.artist-info p {
+    margin: 0 auto;
+    padding: 0.5em 0;
+    max-width: 800px;
+    text-align: center;
+    font-size: 16px; /* Increased font size for better readability */
+}
+
+/* Specific detail classes (ensure these match your HTML) */
+.artist-info .detail-name {
+    font-size: 18px; /* Larger font size for names or important details */
+}
+
+.artist-info .detail-date {
+    font-size: 16px; /* Larger font size for dates */
+}
+
+.artist-info .detail-location {
+    font-size: 16px; /* Larger font size for location details */
+}
+
+/* Grid layout for artist cards */
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+}
+
+/* Styling for each artist card */
+.artist-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 1em;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for artist card */
+.artist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for images within cards */
+.artist-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* Styling for card titles */
+.artist-card h3 {
+    margin: 0.5em 0;
+    color: #333;
+}
+
+/* Styling for card paragraphs */
+.artist-card p {
+    margin: 0.5em 0;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Styling for card links (locations, dates, relations) */
+.artist-card a {
+    display: inline-block;
+    margin: 0.5em 0.3em;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for card links */
+.artist-card a:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Specific colors for each link type */
+.artist-card a[href*="location"] {
+    background-color: #28a745;
+}
+
+.artist-card a[href*="location"]:hover {
+    background-color: #218838;
+}
+
+.artist-card a[href*="dates"] {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.artist-card a[href*="dates"]:hover {
+    background-color: #e0a800;
+}
+
+.artist-card a[href*="relations"] {
+    background-color: #dc3545;
+}
+
+.artist-card a[href*="relations"]:hover {
+    background-color: #c82333;
+}
+
+/* Concert Details Table Styles */
+.concert-details table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .concert-details th, .concert-details td {
+    border: none;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  .concert-details th {
+    background-color: rgba(255, 65, 54, 0.7); /* Reddish background */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .concert-details tr:nth-child(even) {
+    background-color: rgba(255, 247, 0, 0.1); /* Slight yellow tint */
+  }
+  
+  .concert-details tr:hover {
+    background-color: rgba(255, 247, 0, 0.3); /* Stronger yellow on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .concert-info h2 {
+      font-size: 2em;
+    }
+    
+    .concert-info li {
+      font-size: 1em;
+    }
+  
+    .concert-details th, .concert-details td {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+  }
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+	
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+
+/* Footer content styling */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Typing effect container */
+.typing-container {
+    margin-bottom: 10px; /* Space between typing effect and copyright */
+    position: relative;
+    white-space: nowrap;
+}
+
+/* Typing effect styling */
+.typing-effect {
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid #fff;
+    animation: typing 12s steps(50, end) infinite, blink 0.75s step-end infinite;
+    color: #fff; /* Ensure text color is white */
+    max-width: 100%; /* Ensure it doesn’t exceed the container width */
+}
+
+@keyframes typing {
+    0%, 100% { width: 0; }
+    25% { width: 10ch; } /* Adjust according to text length */
+    50% { width: 20ch; } /* Adjust according to text length */
+    75% { width: 30ch; } /* Adjust according to text length */
+    100% { width: 40ch; } /* Adjust according to text length */
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* Copyright styling */
+footer p {
+    margin: 0;
+    font-size: 14px; /* Adjust size as needed */
+}
+
+/* Centered content styling */
+.centered-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2em;
+    text-align: center;
+    height: 100%;
+}
+
+.concert-info img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1em;
+}
+
+/* Concert Info Styles */
+.concert-info {
+    background: linear-gradient(135deg, #FFF700, #FF4136);
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100%;
+  }
+  
+  .concert-info h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #1A1A1A;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+    margin-bottom: 0.5em;
+  }
+  
+  .concert-info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .concert-info li {
+    text-align: center;
+    font-size: 1.25em;
+    margin: 0.75em 0;
+    padding: 0.5em;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .concert-info li:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .concert-info li strong {
+    color: #D81B60;
+    font-weight: bold;
+    margin-right: 0.5em;
+  }
+  
+  @media (max-width: 768px) {
+    .concert-info h2 {
+      font-size: 2em;
+    }
+    
+    .concert-info li {
+      font-size: 1em;
+    }
+  }
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.no-bullets li {
+    padding-left: 0; /* Remove any left padding that might be causing the asterisks */
+}
+
+/* Error page */
+.error-page {
+    min-height: calc(100vh - 60px); /* Adjust based on your navbar height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+.error-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 80%;
+}
+.error-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.error-container h1 {
+    color: #ff5722;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.error-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* New styles specific to search results */
+.search-results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .search-results-container .artist-card {
+    width: 300px;
+    margin: 50 auto;
+  }
+  
+  /* Media query for responsive design */
+  @media (max-width: 768px) {
+    .search-results-container .artist-card {
+      width: 100%;
+    }
+  }

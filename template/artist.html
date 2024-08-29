@@ -1,0 +1,55 @@
+{{ define "Artist" }}
+<html lang="en">
+
+<body action="/artist">
+    <header>
+        <h1>{{.Artist.Name}}</h1>
+    </header>
+    <main>
+        <section class="artist-info">
+            <img src="{{.Artist.Image}}" alt="Image of {{.Artist.Name}}" onerror="this.onerror=null;this.src='/static/images/favicon32.png';">
+            <p>Year Started: {{.Artist.CreationDate}}</p>
+            <p>First Album: {{.Artist.FirstAlbum}}</p>
+            
+            <h2>Members:</h2>
+            <ul>
+                {{if .Artist.Members}}
+                    {{range .Artist.Members}}
+                    <li>{{.}}</li>
+                    {{end}}
+                {{else}}
+                    <li>No members available.</li>
+                {{end}}
+            </ul>            
+
+            <h2>Concert Locations and Dates:</h2>
+            <section class="concert-details">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{range $location, $dates := .Relation.DatesLocations}}
+                            {{range $dates}}
+                            <tr>
+                                <td>{{ $location }}</td>
+                                <td>{{.}}</td>
+                            </tr>
+                            {{end}}
+                        {{else}}
+                        <tr>
+                            <td colspan="2">No concert information available.</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
+{{ end }}

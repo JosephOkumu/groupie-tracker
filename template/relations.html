@@ -1,0 +1,42 @@
+{{define "relations"}}
+<body>
+    <header>
+        <h1>{{.Details.Name}}</h1>
+    </header>
+    <main>
+        <section class="artist-info">
+            <img src="{{ .Details.Image }}" alt="{{ .Details.Name }}" onerror="this.onerror=null;this.src='/static/images/favicon32.png';">
+            
+            <h2>Concert Locations and Dates:</h2>
+            <section class="concert-details">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Location</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{if .Rel}}
+                            {{range $location, $dates := .Rel.DatesLocations}}
+                                {{range $dates}}
+                                <tr>
+                                    <td>{{ $location }}</td>
+                                    <td>{{.}}</td>
+                                </tr>
+                                {{end}}
+                            {{end}}
+                        {{else}}
+                        <tr>
+                            <td colspan="2">No relations found</td>
+                        </tr>
+                        {{end}}
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
+{{end}}
