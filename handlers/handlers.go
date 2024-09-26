@@ -32,50 +32,56 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Route requests based on URL path and HTTP method.
-	switch r.URL.Path {
-	case "/", "/home":
+	if r.URL.Path == "/" || r.URL.Path == "/home" {
 		if r.Method == "GET" {
-			HomeHandler(w, r) 
+			HomeHandler(w, r)
+			return
 		} else {
 			ErrorPage(w, r, http.StatusMethodNotAllowed, "Method not allowed")
+			return
 		}
-
-	case "/artist":
+	} else if r.URL.Path == "/artist" {
 		if r.Method == "GET" {
-			ArtistHandler(w, r) 
+			ArtistHandler(w, r)
+			return
 		} else {
 			ErrorPage(w, r, http.StatusMethodNotAllowed, "Method not allowed")
+			return
 		}
-
-	case "/location":
+	} else if r.URL.Path == "/location" {
 		if r.Method == "GET" {
-			LocationtHandler(w, r) 
+			LocationtHandler(w, r)
+			return
 		} else {
 			ErrorPage(w, r, http.StatusMethodNotAllowed, "Method not allowed")
+			return
 		}
-
-	case "/dates":
+	} else if r.URL.Path == "/dates" {
 		if r.Method == "GET" {
-			DatesHandler(w, r) 
+			DatesHandler(w, r)
+			return
 		} else {
 			ErrorPage(w, r, http.StatusMethodNotAllowed, "Method not allowed")
+			return
 		}
-
-	case "/relations":
+	} else if r.URL.Path == "/relations" {
 		if r.Method == "GET" {
-			RelationsHandler(w, r) 
+			RelationsHandler(w, r)
+			return
 		} else {
 			ErrorPage(w, r, http.StatusMethodNotAllowed, "Method not allowed")
+			return
 		}
-
-	case "/search":
+	} else if r.URL.Path == "/search" {
 		if r.Method == "GET" {
-			SearchHandler(w, r) 
+			SearchHandler(w, r)
+		} else {
 			ErrorPage(w, r, http.StatusMethodNotAllowed, "Method not allowed")
+			return
 		}
-
-	default:
-		ErrorPage(w, r, http.StatusNotFound, "Not found") 
+	} else {
+		ErrorPage(w, r, http.StatusNotFound, "Not found")
+		return
 	}
 }
 
