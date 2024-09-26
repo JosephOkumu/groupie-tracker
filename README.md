@@ -48,7 +48,7 @@ This project was done by:
 
 [@jkuya](https://github.com/jesee-kuya) 
 
-[@josotieno](https://github.com/josephokumu)
+[@JosephOkumu](https://github.com/josephokumu)
 
 [@weakinyi](https://github.com/Wendy-Tabitha)
 
